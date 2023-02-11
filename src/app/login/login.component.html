@@ -1,0 +1,39 @@
+
+<div class="login">
+  <img class="logo" src="./../../../assets/images/logo.jpg" />
+
+  <form class="form-login" [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
+    <div class="cpfCnpj">
+      <label for="cpfCnpj">CPF/CNPJ</label>
+      <div class="sec-2">
+        <input
+          type="text"
+          formControlName="cpfCnpj"
+          name="cpfCnpj"
+          placeholder="000.000.000-00"
+        />
+      </div>
+    </div>
+    <div class="password">
+      <label
+        for="password"
+      >
+        Password
+      </label>
+      <div class="sec-2">
+        <input
+          class="pas"
+          type="password"
+          formControlName="password"
+          name="password"
+          placeholder="············"
+        />
+      </div>
+    </div>
+    <button
+      class="btn-login"
+    >
+      Login
+    </button>
+  </form>
+</div>
