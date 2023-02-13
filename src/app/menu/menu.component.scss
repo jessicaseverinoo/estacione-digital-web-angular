@@ -1,0 +1,33 @@
+.menu {
+  ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 24px;
+    width: 100%;
+    max-width: 800px;
+    background: aliceblue;
+    border-radius: 100px;
+    margin: 0 auto;
+  }
+
+  li {
+    list-style: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #8b97a8;
+    display: grid;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .icons__size {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,19 @@
+.vehicle {
+  width: 100vw;
+
+  .content {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .divider {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background: #dadada;
+  }
+}

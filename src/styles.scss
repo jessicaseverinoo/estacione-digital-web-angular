@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Roboto", Cambria, Cochin, Georgia, Times, "Times New Roman",
+    serif;
+  color: #525252;
+  background-color: #dde5f4;
+}
+
+body {
+  padding-bottom: 200px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 12px 16px 6px;
+
+  cursor: pointer;
+
+  &__lg {
+    min-height: 64px;
+  }
+
+  &__primary {
+    color: #ffffff;
+    background: #34437a;
+  }
+}
+
+.page {
+  width: 100%;
+}
+
+app-login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+app-menu {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}

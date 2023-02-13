@@ -1,0 +1,46 @@
+<main class="add-vehicle">
+  <h2 class="title-page">Adicionar Veículo</h2>
+  <form [formGroup]="addVehicle">
+    <div class="inputs-form">
+      <div class="group-form">
+        <label for="licencePlateVehicle">Placa do veículo</label>
+        <input id="licencePlateVehicle" type="text" formControlName="licencePlateVehicle" />
+      </div>
+      <div class="group-form">
+        <label for="modelVehicle">Modelo</label>
+        <input id="modelVehicle" type="text" formControlName="modelVehicle" />
+      </div>
+      <div class="group-form group-form__inline">
+        <label for="favoriteVehicle" class="container-checkbox">
+          <input id="favoriteVehicle" type="checkbox" formControlName="favoriteVehicle" />
+          Favorito
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="group-form">
+        <label class="typeVehicle">Tipo de veículo</label>
+        <div class="content-radio">
+          <div class="group-radio">
+            <label class="custom-control-label" for="CARRO">
+              <input id="car" type="radio" value="CARRO" name="typeVehicle" formControlName="typeVehicle" [checked]="true"/>
+              Carro
+            </label>
+          </div>
+          <div class="group-radio">
+            <label class="custom-control-label" for="CARRO">
+              <input id="buss" type="radio" value="ONIBUS" name="typeVehicle" formControlName="typeVehicle" />
+              Ônibus
+            </label>
+          </div>
+          <div class="group-radio">
+            <label class="custom-control-label" for="CARRO">
+              <input id="truck" type="radio" value="CAMINHAO" name="typeVehicle" formControlName="typeVehicle" />
+              Caminhão
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn__lg btn__primary" type="button" (click)="onSubmit()">Adicionar Veículo</button>
+  </form>
+</main>

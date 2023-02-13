@@ -1,0 +1,16 @@
+<main class="list-vehicles">
+  <h2 class="title-page">Lista de veículos</h2>
+  <div class="card" *ngFor="let vehicle of listVehicle[0].listVeiculo">
+    <div class="info">
+      <fa-icon class="icons__size icon__rounded icon-car" [icon]="iconCar"></fa-icon>
+      <p class="placa">{{vehicle.placa}}</p>
+    </div>
+    <div class="icons">
+      <fa-icon class="icons__size icon icon__star"[icon]="iconStar"></fa-icon>
+      <fa-icon class="icons__size icon icon__edit" [icon]="iconEdit"></fa-icon>
+      <fa-icon class="icons__size icon icon__delete" [icon]="iconDelete"></fa-icon>
+    </div>
+    <!-- <h3 onclick="isFavoriteVehicle()">{{vehicle.favorito}}</h3> -->
+  </div>
+</main>
+
