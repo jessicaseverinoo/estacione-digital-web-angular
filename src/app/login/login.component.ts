@@ -1,5 +1,8 @@
+import { ConfigService } from './../config/config.service';
+import { User } from './models/user';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -7,42 +10,49 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  protected formLogin!: FormGroup;
+  // protected formLogin!: FormGroup;
   protected submitted: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
+    private configService: ConfigService,
   ) {}
 
   OnInit() {
-    this.formLogin = this.formBuilder.group({
-      cpfCnpj: ['', Validators.required],
-      password: ['', Validators.required],
-    });
   }
 
-  addVehicle = this.formBuilder.group({
-    licencePlateVehicle: ["", Validators.required],
-    modelVehicle: ["", Validators.required],
-    favoriteVehicle: ["", Validators.required],
-    typeVehicle: ""
-  })
+  formLogin = this.formBuilder.group({
+    cpfCnpj: ['', Validators.required],
+    password: ['', Validators.required],
+  });
 
-  get getForm() {
-    return this.formLogin.controls;
-  }
+  // addVehicle = this.formBuilder.group({
+  //   licencePlateVehicle: ["", Validators.required],
+  //   modelVehicle: ["", Validators.required],
+  //   favoriteVehicle: ["", Validators.required],
+  //   typeVehicle: ""
+  // })
+
+  // get getForm() {
+  //   console.log("getForm");
+  //   return this.formLogin.controls;
+  // }
 
   onSubmitLogin() {
-    alert(JSON.stringify(this.addVehicle.value))
+    console.log("onSubmitLogin");
+    const path: string = '/login';
+    alert(JSON.stringify(this.formLogin.value))
     this.submitted = true;
 
     if (this.formLogin.invalid) {
       return;
     }
 
-    const body = {
+    const payload = {
       "cpfCnpj": "123.456.789-01",
       "senha": "jessica123"
     }
+
+    return this.configService.postLogin(path, payload).subscribe(user => console.log(user));
   }
 }
